@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       gameHasStarted = true;
     });
-    Timer.periodic(const Duration(milliseconds: 10), (timer){
+    Timer.periodic(const Duration(milliseconds: 20), (timer){
       if(detectForCollision()) {
         gameHasOver = true;
         timer.cancel();
@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void jumpBall() {
     centralJump = true;
-    Timer.periodic(const Duration(milliseconds: 10), (timer) {
+    Timer.periodic(const Duration(milliseconds: 50), (timer) {
       height = -gravity / 2 * time * time + velocity * time;
       setState(() {
         if(1 - height > 1) {
