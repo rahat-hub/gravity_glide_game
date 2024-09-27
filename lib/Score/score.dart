@@ -21,7 +21,7 @@ class Score extends StatelessWidget {
           ),
           Column(
             children: [
-              Image.asset('assets/images/top_score.png',width: 76, height: 76,),
+              Image.asset('assets/images/top_score.png',width: 150, height: 76,),
               Text(bestScore.toString(), style: const TextStyle(color: Colors.green,fontSize: 40, fontWeight: FontWeight.bold,fontFamily: 'Signatra'),),
             ],
           ),

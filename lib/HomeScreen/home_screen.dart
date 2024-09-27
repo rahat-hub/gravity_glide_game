@@ -4,6 +4,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:gravity_glide/Ball/ball.dart';
+import 'package:gravity_glide/Barricade/barricade.dart';
+import 'package:gravity_glide/GameOverScreen/game_over_screen.dart';
 import 'package:gravity_glide/Score/score.dart';
 import 'package:gravity_glide/TapToStart/tap_to_start.dart';
 
@@ -156,12 +158,45 @@ class _HomeScreenState extends State<HomeScreen> {
               Column(
                 children: [
                   Expanded(
+                    flex: 4,
                     child: Center(
                       child: Stack(
                         children: [
                           TapToStart(gameHasStarted: gameHasStarted),
                           Score(bestScore: bestScore, score: score),
                           Ball(ballX: ballX, ballY: ballY - ballHeight, ballWidth: ballWidth, ballHeight: ballHeight),
+                          Barricade(barricadeX: barricadeX, barricadeY:  barricadeY - barricadeHeight, barricadeWidth: barricadeWidth, barricadeHeight: barricadeHeight),
+                          GameOverScreen(gameHasOver: gameHasOver),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.grey[600],
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset('assets/images/ground.jpg',fit: BoxFit.cover, width: double.infinity, height: double.infinity),
+                          const Positioned.fill(
+                            child: Center(
+                              child: Text('Garvity Glider',
+                                style: TextStyle(
+                                    fontSize: 40.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Bebas',
+                                    shadows: [
+                                      Shadow(
+                                        blurRadius: 4,
+                                        color: Colors.pink,
+                                        offset: Offset(2, 2)
+                                      )
+                                    ]
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
