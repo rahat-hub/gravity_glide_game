@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="gravity_glide"
+        android:label="Gravity Glider"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
